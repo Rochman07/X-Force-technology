@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>X-Tech</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="hover.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- <script src="https://unpkg.com/vue-router@2.0.0/dist/vue-router.js"></script> -->
+
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <img style="height: 60px" src="logo.png">
+            <a class="navbar-brand" href="#" > X Force Technology</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html">Home
+                          <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeri.html">Galerry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="change.html">Currency Exchange</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+            </ul>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="./slider/asusbg.jpg">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style="height: 600px" src="./slider/samsungbg.jpg">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img style="height: 600px" src="./slider/applebg.jpg">
+                    <div class="carousel-caption">
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+    </header>
+    <div id="prod"></div>
+    <section style="margin-top: 30px;" id='about'>
+        <div class="container">
+            <center>
+            </center>
+            <div class="row">
+                <div class="col-sm-6">
+                    <h1>Hai</h1>
+                </div>
+                <div class="col-sm-6">
+                    <img class="img-responsive" src="./about/rog.png" width="50%">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div style="margin-top:30px;" id='app'>
+        <div class="container">
+            <center>
+                <h1>Product</h1>
+            </center>
+            <div class="row">
+                <div class="col-sm-4" v-for="item in products">
+                    <div class="hovereffect">
+                        <img style="width: 360px" class="img-responsive" v-bind:src="'./product/' + item.lnk" alt="">
+                        <div class="overlay">
+                            <h2>{{ item.name }}</h2>
+                            <!-- <a class="info" v-bind:href="'./product.html'">Detail Product</a> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center>
+                <a href="./product.html"><button class="btn btn-primary" style="margin-top:20px;"> See More Our Product With Detail</button> </a>
+            </center>
+        </div>
+    </div>
+
+
+
+    <div style="margin-top:30px;" id='galeri'>
+        <div class="container">
+            <center>
+                <h1>Galerry</h1>
+            </center>
+            <div class="row">
+                <div class="col-sm-4" v-for="item in galeri">
+                    <div class="hovereffect">
+                        <img style="width: 360px" class="img-responsive" v-bind:src="'./galeri/' + item.lnk" alt="">
+                        <div class="overlay">
+                            <h2>{{ item.name }}</h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <center>
+                <a href="./galeri.html"><button class="btn btn-primary" style="margin-top:20px;"> See More Our Galerry</button> </a>
+            </center>
+        </div>
+    </div>
+
+    <section id="footer" style="margin-top:30px;">
+        <div class="container">
+            <div class="row" style="margin-top: -26px;">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <h4 style="color:#fff;">
+                            Follow Us!
+                        </h4>
+                        <li class="list-inline-item"><a href="https://id-id.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="https://twitter.com/?lang=id"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="https://www.instagram.com/?hl=id"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                </hr>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p class="h6">&copy All right Reversed. Nama Kelompok</p>
+                </div>
+                </hr>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
