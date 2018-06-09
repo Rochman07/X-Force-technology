@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Foreign Exchange</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="hover.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <style>
+        .carousel-inner img {
+            width: 100%;
+            height: 100%;
+        }
+    </style>
+</head>
+
+<body onload="convertCurrency();">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+            <img style="height: 60px" src="logo.png">
+            <a class="navbar-brand" href="#" > X Force Technology</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                  </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">Home
+                          <span class="sr-only">(current)</span>
+                        </a>
+                    </li>
+                    <li class="nav-item ">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="product.html">Product</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="galeri.html">Galerry</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="change.html">Currency Exchange</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <header></header>
+    <div id="app"></div>
+    <div id="galeri"></div>
+    <div id="prod"></div>
+    <div id="contact"></div>
+    <div id="galerry"></div>
+    <section style="margin-top: 70px;" id="about">
+        <div class="container">
+            <center>
+                <h1>
+                    CURRENCY EXCHANGE
+                </h1>
+            </center>
+            <select class="form-control" id="from" onchange="convertCurrency();">
+                    <option value="USD" selected>AMERICAN DOLLAR (USD)</option>
+                    <option value="GBP">BRITISH POUND(GBP)	</optio>
+                    <option value="JPY">JEPANG YEN (JPY)</option>
+                    <option value="AUD">AUSTRALIAN DOLLAT (AUD)</option>
+                    <option value="IDR">INDONESIA RUPIAH (IDR)</option>
+                  </select>
+            <br>
+            <input type="text" id="fromAmount" value="1" onkeyup="convertCurrency();" class="form-control">
+            <br>
+            <select class="form-control" id="to" onchange="convertCurrency();">
+                    <option value="GBP">BRITISH POUND (GBP)</option>
+                    <option value="JPY">JEPANG YEN (JPY)</optio>
+                    <option value="AUD">AUSTRALIAN DOLLAT (AUD)</option>
+                    <option value="USD">AMERICAN DOLLAR (USD)</option>
+                    <option value="IDR">INDONESIA RUPIAH (IDR)</option>
+             </select>
+            <br>
+
+            <input type="text" id="toAmount" class="form-control " disabled>
+        </div>
+
+    </section>
+    <section id="footer" class="fixed-bottom">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
+                    <ul class="list-unstyled list-inline social text-center">
+                        <h4 style="color:#fff;">
+                            Follow Us!
+                        </h4>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-facebook"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-twitter"></i></a></li>
+                        <li class="list-inline-item"><a href="javascript:void();"><i class="fa fa-instagram"></i></a></li>
+                    </ul>
+                </div>
+                </hr>
+            </div>
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+                    <p class="h6">&copy All right Reversed. Nama Kelompok</p>
+                </div>
+                </hr>
+            </div>
+        </div>
+    </section>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="http://openexchangerates.github.io/money.js/money.js"></script>
+    <script src="accounting.js"></script>
+    <script src="app.js"></script>
+    <script>
+        function convertCurrency() {
+            var from = document.getElementById("from").value;
+            var to = document.getElementById("to").value;
+            var xmlhttp = new XMLHttpRequest();
+            var url = "http://data.fixer.io/api/latest?access_key=df8c15494151a866f35cb2b848eb192d&symbols=" + from + "," + to;
+            xmlhttp.open("GET", url, true);
+            xmlhttp.send();
+            xmlhttp.onreadystatechange = function() {
+                if (xmlhttp.readyState == 4 && xmlhttp.status == 200) {
+                    var result = xmlhttp.responseText;
+                    var jsResult = JSON.parse(result);
+                    var oneUnit = jsResult.rates[to] / jsResult.rates[from];
+                    var amt = document.getElementById("fromAmount").value;
+                    document.getElementById("toAmount").value = (oneUnit * amt).toFixed(2);
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
